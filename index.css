@@ -1,0 +1,153 @@
+#yellow {
+    color: yellow;
+}
+
+#green {
+    color: green;
+}
+
+#blue {
+    color: blue;
+}
+
+#pink {
+ color: pink;
+}
+
+#purple {
+    color: purple;
+}
+
+#header {
+    display: flex;
+    flex-direction: column; /* Altera para coluna em telas menores */
+    justify-content: center;
+    align-items: center; /* Centraliza itens horizontalmente */
+    top: 10px;
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 600px) {
+    #header {
+        flex-direction: column; /* Altera para coluna em telas menores */
+        border-top-width: 10px; /* Reduz a altura da borda para telas menores */
+    }
+}
+
+.titulo h1{
+    display: inline-block;
+    margin: 0;
+    height: auto;
+    width: auto;
+}
+
+body {
+    background-color: rgb(30, 30, 63);
+} 
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px; /* Adiciona um espaçamento superior */
+    overflow: hidden;
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 600px) {
+    .logo {
+        flex-direction: column; /* Altera para coluna em telas menores */
+        align-items: center; /* Centraliza itens horizontalmente */
+    }
+}
+
+
+    
+
+/* 
+@media screen and (max-width: 600px) {
+    #l1, #l2 {
+        position: static; 
+        text-align: center; 
+    }
+} */
+
+
+/*.quadrado {                        // Quadrado Antigo//
+    width: 200px;
+    height: 55px;
+    background-color: #8f8f8f;
+    border-radius: 10%; 
+    position: absolute;
+    top: 330px;
+    left: 42%;
+    opacity: 0.2;
+    outline-style:1px ;
+    outline-color: azure;
+}*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.quadrado {
+    width: 230px;
+    height: 55px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    padding: 10px;
+    color: white;
+    text-align: 150px;
+    position: absolute ;
+    top: 330px;
+    border-radius: 30;
+}
+
+#bj {
+    background-color: rgb(65, 65, 121);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.no-scroll {
+    overflow: hidden; /* Desativar rolagem da página */
+}
+
+.botao-invisivel {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#botao1 {
+    top: 420px;
+}
+
+#botao2 {
+    top: 460px;
+}
+
+#botao3 {
+    top: 500px;
+}
+
+.botao-invisivel:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+

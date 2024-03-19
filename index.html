@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img\icone.ico">
+    <title>WORDS</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: rgb(30, 30, 63);
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .toggle-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .toggle-label {
+        margin-right: 10px;
+    }
+
+    .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 34px;
+        transition: .4s;
+    }
+
+    .toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        transition: .4s;
+    }
+
+    input:checked + .toggle-slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .toggle-slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .toggle-slider:before {
+        transform: translateX(26px);
+    }
+
+    .slider-container {
+        width: 80%;
+        margin: 20px auto;
+    }
+    </style>
+</head>
+<body class="no-scroll">
+    <nav id="tresbotoes">
+        <button id="botao1" class="botao-invisivel">Jogos Passados</button>
+        <button id="botao2" class="botao-invisivel">Configurações</button>
+        <button id="botao3" class="botao-invisivel">Feedback</button>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <div class="toggle-container">
+                    <span class="toggle-label">CONTRASTE ALTO</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggleContraste">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <a href="https://github.com/seu-usuario/repositorio" target="_blank">Link para o GitHub</a>
+            </div>
+        </div>
+
+        <div class="logo">
+            <img src="img\icone.png" width="100" height="100"  alt="">
+        </div>
+    </nav>
+    <header id="header">
+        <div class="titulo">
+            <h1 id="yellow">W</h1> 
+            <h1 id="green">O</h1>
+            <h1 id="blue">R</h1>
+            <h1 id="pink">D</h1>
+            <h1 id="purple">S</h1>
+        </div>
+    </header>
+    <div style="display: flex; flex-wrap: wrap;">
+        <h4 style="flex: 1; text-align: center; margin: 0; padding: 10px; color: azure;">TENHA DE 6 A 8 TENTATIVAS</h4>
+    </div>
+    <div>
+        <h4 style="flex: 1; text-align: center; margin: 0; padding: 10px; color: azure;">PARA ADIVINHAR A PALAVRA</h4>
+    </div>
+    <div class="container">
+        <div class="quadrado">
+            Jogo diário, <span id="dataAtual"></span>
+            <button id="bj">Jogar</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        // Adiciona o evento de clique ao botão "Configurações"
+        document.getElementById('botao2').addEventListener('click', function(event) {
+            event.stopPropagation(); // Impede que o evento de clique propague para os pais
+            document.getElementById('popup').style.display = 'block';
+        });
+
+        // Fecha o popup quando clicar fora dele
+        window.addEventListener('click', function(event) {
+            var popup = document.getElementById('popup');
+            if (event.target !== popup && !popup.contains(event.target)) {
+                popup.style.display = 'none';
+            }
+        });
+
+        // Adiciona a lógica para mudar o contraste quando o toggle é alterado
+        document.getElementById('toggleContraste').addEventListener('change', function() {
+            var contrasteAtivado = this.checked;
+            // Coloque aqui o código para ativar ou desativar o contraste do jogo
+            if (contrasteAtivado) {
+                console.log('Contraste ativado!');
+            } else {
+                console.log('Contraste desativado!');
+            }
+        });
+    </script>
+</body>
+</html>
