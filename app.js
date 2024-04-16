@@ -12,7 +12,7 @@ const rows = 6;
 const columns = 5;
 let currentRow = 0;
 let currentColumn = 0;
-let words = "LETRA";
+let words = "CASAS";
 let wordsMap = {};
 for (let index = 0; index < words.length; index++) {
   wordsMap[words[index]] = index;
@@ -58,11 +58,11 @@ const checkGuess = () => {
   }
 
   if(guess === words) {
-      window.alert("tu é demais, simplesmente o detetivao do entreterimento!")
+      window.alert("jogou muito, volte na proxima aula para jogar!")
       return
   } {
       if(currentRow === rows -1) {
-          window.alert("Errrrrrou!")
+          window.alert("Errrrrrou, tente somente na proxima aula!")
       } else {
           moveToNextRow()
       }
